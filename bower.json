@@ -5,6 +5,11 @@
 	"homepage": "https://github.com/kus/orientation.js",
 	"main": "js/orientation.js",
 	"ignore": [
-		"./!(js/orientation.js)"
+		"README.md",
+		"History.md",
+		"axis.jpg",
+		"bower.json",
+		"demo",
+		"js/orientation.min.js"
 	]
 }
