@@ -159,22 +159,22 @@
 		if (_listeners.length > 0) {
 			var data = {
 				orientation: _orientation,
-					x: (_x * (90 / _gravity)).toFixed(0) * -1, // z
-				z: _a.toFixed(0), // y
-				y: (_z * (90 / _gravity)).toFixed(0), // x
+				z: (_x * (90 / _gravity)).toFixed(0) * -1,
+				y: _a.toFixed(0),
+				x: (_z * (90 / _gravity)).toFixed(0),
 				original: _original,
 				raw: _raw
 			};
 			if (_orientation != 0) {
-				data.x = (_y * (90 / _gravity)).toFixed(0);
+				data.z = (_y * (90 / _gravity)).toFixed(0);
 			}
 			// iOS devices
 			if (_iOS) {
+				data.z *= -1;
 				data.x *= -1;
-				data.y *= -1;
 			}
 			if (_orientation < 0) {
-				data.x *= -1;
+				data.z *= -1;
 			}
 			for (var i in _listeners) {
 				_listeners[i](data);
