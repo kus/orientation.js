@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>orientation.js</title>
+	<style type="text/css">
+		ul {
+			padding: 0;
+			margin: 0;
+		}
+		li {
+			padding: 0;
+			margin: 0;
+			list-style-type: none;
+			font-size: 60px;
+		}
+		li:before {
+			content: attr(data-label) ": ";
+		}
+		li:after {
+			content: "°";
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li data-label="Orientation" id="o"></li>
+			<li data-label="X" id="x"></li>
+			<li data-label="Y" id="y"></li>
+			<li data-label="Z" id="z"></li>
+		</ul>-
+	</div>
+	<script src="../js/orientation.js"></script>
+	<script>
+		var o = document.getElementById('o'),
+			x = document.getElementById('x'),
+			y = document.getElementById('y'),
+			z = document.getElementById('z');
+		window.deviceOrientation.onUpdate(function(data){
+			o.innerHTML = data.orientation;
+			x.innerHTML = data.x;
+			y.innerHTML = data.y;
+			z.innerHTML = data.z;
+		});
+	</script>
+</body>
+</html>
