@@ -1,5 +1,10 @@
 {
 	"name": "orientation.js",
+	"version": "0.0.1",
+	"author": "Blake Kus",
 	"homepage": "https://github.com/kus/orientation.js",
-	"main": "js/orientation.js"
+	"main": "js/orientation.js",
+	"ignore": [
+		"./!(js/orientation.js)"
+	]
 }
